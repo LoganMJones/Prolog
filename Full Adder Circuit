@@ -37,9 +37,13 @@ mycircuit(X,Y,Z,F) :- myxor(X,Y,T1),
     myxor(T1,Z,T2), mynand(T1,T2,F),
     write(X),write(' '),write( Y),write(' '),write(Z),write(' '),writeln(F).
 
-% print method provided by Dr. H
+
+% ------------------------------------ Not My Code -------------------------------------------
+% print method provided by Dr. Huson 
 pmath(A1, A0, B1, B0, S1, S0, Cout):-  write('\t'), write(A1), write(A0), write(' + '),
                      write(B1), write(B0), write(' = '), write(Cout), write(S1), writeln(S0).
+% --------------------------------------------------------------------------------------------
+
 % helper circuit
 helpercircuit(X,Y,F,T2) :- myor(X,Y,T1), myand(X,Y,T2),
                   mynot(T2,T3), myand(T1,T3,F).
